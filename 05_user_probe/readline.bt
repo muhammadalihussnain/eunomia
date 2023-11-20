@@ -1,7 +1,0 @@
-#!/usr/sbin/bpftrace
-
-tracepoint:syscalls:sys_enter_read
-/execname == "bash"/
-{
-    printf("readline called in Bash\n");
-}
