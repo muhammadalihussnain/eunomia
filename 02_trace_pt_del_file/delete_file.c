@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/resource.h>
 
-#include "hello.skel.h"
+#include "delete_file.skel.h"
 
 static void bump_memlock_rlimit(void)
 {
@@ -19,9 +19,9 @@ static void bump_memlock_rlimit(void)
 
 int main(void){
     bump_memlock_rlimit();
-    struct hello *skel = hello__open();
-    hello__load(skel);
-    hello__attach(skel);
+    struct delete *skel = delete_file__open();
+    delete_file__load(skel);
+    delete_file__attach(skel);
     while(true)
 		;
     return 0;
