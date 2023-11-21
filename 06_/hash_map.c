@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <sys/resource.h>
 
-#include "hash_map.skel.h"
-
+#include "ring_buffer.h"
 static void bump_memlock_rlimit(void)
 {
 	struct rlimit rlim_new = {
@@ -19,9 +18,9 @@ static void bump_memlock_rlimit(void)
 
 int main(void){
     bump_memlock_rlimit();
-    struct hash_map *skel = hash_map__open();
-    hash_map__load(skel);
-    hash_map__attach(skel);
+    struct ring_buffer *skel = ring_buffer__open();
+    ring_buffer__load(skel);
+    ring_buffer__attach(skel);
     while(true)
 		;
     return 0;

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "vmlinux.h": "c",
+        "typeinfo": "c"
+    }
+}

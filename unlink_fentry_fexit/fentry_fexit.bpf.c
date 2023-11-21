@@ -3,6 +3,7 @@
 #include <bpf/bpf_tracing.h>
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
+typedef int pid_t;
 
 SEC("fentry/do_unlinkat")
 int BPF_PROG(do_unlinkat, int dfd, struct filename *name)
